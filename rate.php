@@ -17,23 +17,24 @@
         <hr>
         <form action="rate.php" method="POST">
         幣別：
-        <select name="currency">
+        <select name="ctype">
         <?php 
             foreach(array_keys($currency) as $curr) {
                 echo "<option value='$curr'>$curr</option>";
             }
         ?>
         </select>
-        <input type=text size=10 name=usd required>元 
+        <input type=text size=10 name=dollar required>元 
         <input type=submit value="開始換算">
         </form>
 
         <?php
-            $usd = $_POST["usd"];
-            if ($usd!="") {
-                $ntd = $usd * 30.34;
-                echo "美金" . 
-                    $usd . "元等於台幣" . 
+            $dollar = $_POST["dollar"];
+            $ctype = $_POST["ctype"];
+            if ($dollar!="") {
+                $ntd = $dollar * $currency[$ctype];
+                echo $ctype . 
+                    $dollar . "元等於台幣" . 
                     $ntd . "元";
             }
         ?>
