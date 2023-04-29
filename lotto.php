@@ -9,7 +9,13 @@
         <h2>樂透預測</h2>
         <?php include "menu.php"; ?>
         <hr>
-        
+        <?php
+            $numbers = range(1, 42);
+            shuffle($numbers);
+            foreach ($numbers as $number) {
+                echo "$number ";
+            }
+        ?>
     </div>
     <?php include "bscript.php"; ?>
   </body>
