@@ -21,7 +21,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="lotto.php">樂透預測</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="rate.php">匯率換算</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
