@@ -12,8 +12,10 @@
         <?php
             $numbers = range(1, 42);
             shuffle($numbers);
-            foreach ($numbers as $number) {
-                echo "$number ";
+            for($i=0; $i<6; $i++) {
+                echo "<button type='button' " .
+                     " class='btn btn-danger'>" . 
+                    $numbers[$i] . "</button>&nbsp";
             }
         ?>
     </div>
