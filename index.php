@@ -6,7 +6,8 @@
   </head>
   <body>
     <div class="container">
-        <h2>Welcome to my website!!</h2>
+        <h2>歡迎來到何老師的PHP示範網站</h2>
+        <?php include "menu.php"; ?>
         <hr>
         <?php
             //for($i=1; $i<=6; $i++) {
