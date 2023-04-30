@@ -25,6 +25,14 @@
             <li><a class="dropdown-item" href="bmi.php">BMI計算</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            資料庫功能
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="roadnews.php">高科馬路消息</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
