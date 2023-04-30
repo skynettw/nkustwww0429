@@ -15,9 +15,18 @@
             //}
         ?>
 <form action="login.php" method="POST">
-    Username: <input type=text name=username required><br>
-    Password: <input type=password name=password required><br>
-    <input type=submit value="登入">
+    <table>
+        <tr>
+            <td align=right>Username:</td>
+            <td align=left><input type=text name=username required></td>
+        </tr>
+        <tr>
+            <td align=right>Password:</td>
+            <td align=left><input type=password name=password required>
+        </td>
+        </tr>
+        <tr><td colspan=2><input type=submit value="登入"></td></tr>
+    </table>
 </form>
 
 
