@@ -29,7 +29,8 @@
                     echo "<td>" . $row["id"]    . "</td>" .  
                          "<td>" . $row["title"] . "</td>" .  
                          "<td>" . $row["pdate"] . "</td>" .
-                         "<td><a href='#' class='btn btn-sm btn-outline-danger'>刪除</td>";
+                         "<td><a href='delete.php?id=" .
+                                  $row["id"] . "' class='btn btn-sm btn-outline-danger'>刪除</td>";
                     echo "</tr>";
                 }
                 echo "</table>";
