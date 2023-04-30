@@ -9,7 +9,8 @@
   </head>
   <body>
     <div class="container">
-        <h2>高科馬路消息</h2>
+        <br>
+        <h2 class="alert alert-primary">高科馬路消息</h2>
         <?php include "menu.php"; ?>
         <hr>
         <form action="bmi.php" method="POST">
@@ -22,13 +23,18 @@
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "id: " . $row["id"]. 
-                     " - Name: " . $row["title"]. " " 
-                     . $row["pdate"]. "<br>";
-            }
+                echo "<table class='table table-striped table-hover'>";
+                echo "<tr><th>編號</th><th>馬路消息</th><th>張貼日期</th></tr>";
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["id"]    . "</td>" .  
+                         "<td>" . $row["title"] . "</td>" .  
+                         "<td>" . $row["pdate"] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
             } else {
-            echo "0 results";
+                echo "0 results";
             }
             $conn->close();
 

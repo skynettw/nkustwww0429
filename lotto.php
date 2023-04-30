@@ -6,7 +6,8 @@
   </head>
   <body>
     <div class="container">
-        <h2>樂透預測</h2>
+        <br>
+        <h2 class="alert alert-success">樂透預測</h2>
         <?php include "menu.php"; ?>
         <hr>
         <?php
