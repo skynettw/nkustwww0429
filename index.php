@@ -14,6 +14,14 @@
             //    echo "<h$i>Hello</h$i>";
             //}
         ?>
+<form action="login.php" method="POST">
+    Username: <input type=text name=username required><br>
+    Password: <input type=password name=password required><br>
+    <input type=submit value="登入">
+</form>
+
+
+
         西元
         <select>
             <?php
