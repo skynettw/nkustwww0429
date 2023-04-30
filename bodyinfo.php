@@ -32,6 +32,7 @@
             if ($result->num_rows > 0) {
                 echo "<table class='table table-striped table-hover'>";
                 echo "<tr><th>姓名</th><th>身高</th><th>體重</th>";
+                echo "<th>BMI</th><th>評等</th>";
                 if($_SESSION["user"]=="admin") {
                     echo "<th>管理</th>";
                 }
@@ -41,6 +42,17 @@
                     echo "<td>" . $row["name"]    . "</td>" .  
                          "<td>" . $row["h"] . "</td>" .  
                          "<td>" . $row["w"] . "</td>";
+                    $bmi = round($row["w"] / ($row["h"]/100)**2, 2);
+                    echo "<td>$bmi</td>";
+                    if ($bmi<18.5) {
+                        echo "<td>太瘦了！</td>";
+                    } else if ($bmi>=18.5 && $bmi<24) {
+                        echo "<td>剛剛好</td>";
+                    } else {
+                        echo "<td>有點胖喔</td>";
+                    }
+
+
                     if($_SESSION["user"]=="admin") {
                         echo "<td><a href='delete.php?id=" .
                         $row["id"] . "' class='btn btn-sm btn-outline-danger'>刪除</td>";
