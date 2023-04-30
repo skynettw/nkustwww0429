@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">何敏煌</a>
@@ -33,6 +36,21 @@
             <li><a class="dropdown-item" href="roadnews.php">高科馬路消息</a></li>
           </ul>
         </li>
+        <?php 
+           if ($_SESSION["user"]!="admin") {
+        ?>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">登入</a>
+          </li>
+        <?php 
+          } else {
+        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">登出</a>
+        </li>
+        <?php 
+         }
+        ?>
       </ul>
     </div>
   </div>
