@@ -13,13 +13,12 @@
         <h2 class="alert alert-primary">高科馬路消息</h2>
         <?php include "menu.php"; ?>
         <hr>
-        <form action="bmi.php" method="POST">
-        身高：<input type=text size=10 name=h required>公分<br>
-        體重：<input type=text size=10 name=w required>公斤<br>
-        <input type=submit value="開始計算"><br>
+        <form action="addnews.php" method="POST">
+        馬路消息：<input type=text size=100 name=title required>
+        <input type=submit value="新增"><br>
         </form>
         <?php
-            $sql = "SELECT * FROM news";
+            $sql = "SELECT * FROM news order by pdate desc";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
