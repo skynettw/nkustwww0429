@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html>
   <head>
@@ -14,6 +17,11 @@
             //    echo "<h$i>Hello</h$i>";
             //}
         ?>
+
+<?php 
+    if ($_SESSION["user"]!="admin") 
+    {
+?>
 <form action="login.php" method="POST">
     <table>
         <tr>
@@ -28,6 +36,11 @@
         <tr><td colspan=2><input type=submit value="登入"></td></tr>
     </table>
 </form>
+<?php 
+    } else {
+        echo "<a href='logout.php' class='btn btn-primary'>登出</a>";
+    }
+?>
 
 
 
