@@ -1,8 +1,5 @@
 <?php                 
-   $currency = array("美金"=>30.4, 
-                     "港幣"=>3.76,
-                     "英鎊"=>37.5,
-                     "澳幣"=>19.93);
+   include "database.php";
 ?>
 <!doctype html>
 <html>
@@ -21,7 +18,19 @@
         <input type=submit value="開始計算"><br>
         </form>
         <?php
+            $sql = "SELECT * FROM news";
+            $result = $conn->query($sql);
 
+            if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "id: " . $row["id"]. 
+                     " - Name: " . $row["title"]. " " 
+                     . $row["pdate"]. "<br>";
+            }
+            } else {
+            echo "0 results";
+            }
+            $conn->close();
 
         ?>
     </div>
