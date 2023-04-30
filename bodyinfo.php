@@ -26,21 +26,21 @@
         ?>
 
         <?php
-            $sql = "SELECT * FROM news order by pdate desc";
+            $sql = "SELECT * FROM bodyinfo order by id desc";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 echo "<table class='table table-striped table-hover'>";
-                echo "<tr><th>編號</th><th>馬路消息</th><th>張貼日期</th>";
+                echo "<tr><th>姓名</th><th>身高</th><th>體重</th>";
                 if($_SESSION["user"]=="admin") {
                     echo "<th>管理</th>";
                 }
                 echo "</tr>";
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["id"]    . "</td>" .  
-                         "<td>" . $row["title"] . "</td>" .  
-                         "<td>" . $row["pdate"] . "</td>";
+                    echo "<td>" . $row["name"]    . "</td>" .  
+                         "<td>" . $row["h"] . "</td>" .  
+                         "<td>" . $row["w"] . "</td>";
                     if($_SESSION["user"]=="admin") {
                         echo "<td><a href='delete.php?id=" .
                         $row["id"] . "' class='btn btn-sm btn-outline-danger'>刪除</td>";
