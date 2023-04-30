@@ -34,6 +34,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="roadnews.php">高科馬路消息</a></li>
+            <li><a class="dropdown-item" href="bodyinfo.php">身體健康管理</a></li>
           </ul>
         </li>
         <?php 
