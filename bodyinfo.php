@@ -17,8 +17,10 @@
         <?php
             if($_SESSION["user"]=="admin") {
         ?>
-        <form action="addnews.php" method="POST">
-        馬路消息：<input type=text size=100 name=title required>
+        <form action="addbodyinfo.php" method="POST">
+        姓名：<input type=text size=20 name=name required>
+        身高：<input type=text size=4 name=h required>公分
+        體重：<input type=text size=4 name=w required>公斤
         <input type=submit value="新增"><br>
         </form>
         <?php 
@@ -54,7 +56,7 @@
 
 
                     if($_SESSION["user"]=="admin") {
-                        echo "<td><a href='delete.php?id=" .
+                        echo "<td><a href='deletebodyinfo.php?id=" .
                         $row["id"] . "' class='btn btn-sm btn-outline-danger'>刪除</td>";
                     }
                     echo "</tr>";
