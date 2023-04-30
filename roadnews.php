@@ -23,12 +23,13 @@
 
             if ($result->num_rows > 0) {
                 echo "<table class='table table-striped table-hover'>";
-                echo "<tr><th>編號</th><th>馬路消息</th><th>張貼日期</th></tr>";
+                echo "<tr><th>編號</th><th>馬路消息</th><th>張貼日期</th><th>管理</th></tr>";
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["id"]    . "</td>" .  
                          "<td>" . $row["title"] . "</td>" .  
-                         "<td>" . $row["pdate"] . "</td>";
+                         "<td>" . $row["pdate"] . "</td>" .
+                         "<td><a href='#' class='btn btn-sm btn-outline-danger'>刪除</td>";
                     echo "</tr>";
                 }
                 echo "</table>";
